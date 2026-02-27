@@ -151,6 +151,23 @@ body {
 .header-tabs {
   display: flex;
   gap: var(--space-sm);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: var(--space-sm);
 }
 
 .header-tab {
@@ -736,11 +753,47 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .welcome-title {
-    font-size: 32px;
+    font-size: 28px;
+    padding: 0 var(--space-md);
+  }
+  
+  .welcome-subtitle {
+    font-size: 16px;
+    padding: 0 var(--space-md);
+  }
+  
+  .welcome-container {
+    padding: var(--space-md);
+  }
+  
+  .chat-box {
+    padding: var(--space-md);
+    margin: 0 var(--space-md);
+  }
+  
+  .chat-input {
+    font-size: 14px;
+  }
+  
+  .pills-container {
+    gap: var(--space-xs);
+  }
+  
+  .pill {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 13px;
   }
   
   .dashboard {
     padding: var(--space-md);
+  }
+  
+  .dashboard-title {
+    font-size: 24px;
+  }
+  
+  .dashboard-section-title {
+    font-size: 18px;
   }
   
   .modules-grid,
@@ -757,11 +810,173 @@ body {
     width: 100%;
   }
   
+  .browser-title {
+    font-size: 24px;
+  }
+  
+  .skill-browser {
+    padding: var(--space-md);
+  }
+  
+  .header {
+    padding: 0 var(--space-md);
+  }
+  
+  .header-logo {
+    font-size: 16px;
+  }
+  
+  .header-logo svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .header-actions {
+    gap: var(--space-xs);
+  }
+  
+  .header-actions .btn {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 12px;
+  }
+  
+  .header-actions .btn span {
+    display: none;
+  }
+  
   .header-tabs {
     display: none;
   }
   
   .preview-title {
     font-size: 24px;
+  }
+  
+  .preview-header {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  
+  .preview-content {
+    padding: var(--space-md);
+  }
+  
+  .preview-content h1 { font-size: 24px; }
+  .preview-content h2 { font-size: 20px; }
+  .preview-content h3 { font-size: 16px; }
+  
+  .preview-content p,
+  .preview-content li {
+    font-size: 14px;
+  }
+  
+  .modal {
+    margin: var(--space-md);
+    max-height: calc(100vh - var(--space-xl));
+  }
+  
+  .modal-header {
+    padding: var(--space-md);
+  }
+  
+  .modal-title {
+    font-size: 20px;
+  }
+  
+  .modal-body {
+    padding: var(--space-md);
+  }
+  
+  .form-input,
+  .form-textarea,
+  .form-select {
+    font-size: 14px;
+    padding: var(--space-sm);
+  }
+  
+  .form-textarea {
+    min-height: 150px;
+  }
+  
+  .tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .tab {
+    white-space: nowrap;
+    font-size: 13px;
+    padding: var(--space-xs) var(--space-sm);
+  }
+  
+  .skill-card {
+    padding: var(--space-md);
+  }
+  
+  .skill-card-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .skill-card-name {
+    font-size: 16px;
+  }
+  
+  .skill-card-desc {
+    font-size: 13px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .welcome-title {
+    font-size: 24px;
+  }
+  
+  .header-actions .btn svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .btn-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .header-actions .btn span {
+    display: none;
+  }
+  
+  .header-actions .btn {
+    padding: var(--space-xs);
+  }
+  
+  .header-tabs {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary);
+    flex-direction: column;
+    padding: var(--space-md);
+    gap: var(--space-sm);
+    transform: translateX(-100%);
+    transition: var(--transition);
+    z-index: 99;
+  }
+  
+  .header-tabs.open {
+    transform: translateX(0);
+  }
+  
+  .header-tab {
+    padding: var(--space-md);
+    background: var(--surface);
+    font-size: 16px;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
   }
 }
