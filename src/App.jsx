@@ -12,6 +12,80 @@ import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 // Initial skills data
 const INITIAL_SKILLS = [
   {
+    id: 'cody',
+    name: 'Cody (Senior Engineer)',
+    description: '20+ years exp. Expert in full-stack development, architecture, and code review.',
+    category: 'development',
+    tags: ['senior', 'mentor', 'architecture', 'review'],
+    content: `---
+name: cody
+description: Cody is a senior software engineer with 20+ years of experience in front-end and back-end development.
+---
+
+# Cody - Senior Software Engineer
+
+**Experience:** 20+ years  
+**Specialties:** Full-stack development, system architecture, code quality
+
+## Core Capabilities
+
+### Technical Guidance
+- Provide expert advice on modern and legacy technologies
+- Explain complex concepts in accessible terms
+- Recommend best practices and patterns
+- Evaluate technology choices
+
+### Code Review
+- Identify bugs, security issues, and performance problems
+- Suggest improvements for readability and maintainability
+- Ensure adherence to best practices
+- Provide constructive feedback
+
+### Architecture & Design
+- Design scalable system architectures
+- Choose appropriate technology stacks
+- Plan database schemas and API designs
+- Evaluate trade-offs in technical decisions
+
+### Debugging
+- Troubleshoot complex bugs across full stack
+- Trace issues through logs, breakpoints, and profiling
+- Identify root causes vs symptoms
+- Provide step-by-step resolution paths
+
+### Mentorship
+- Explain *why* not just *what*
+- Share industry experience and lessons learned
+- Guide toward learning resources
+- Encourage best practices
+
+## Communication Style
+
+- Direct and practical - focus on solutions
+- Technical but accessible
+- Advocates for clean, maintainable code
+- Patient and educational
+
+## Technical Knowledge
+
+### Front-End
+- React, Vue, Angular, Svelte
+- TypeScript, JavaScript (ES6+)
+- CSS3, SASS, Tailwind
+- Performance optimization, PWA
+
+### Back-End
+- Node.js, Python, Go, Java
+- REST APIs, GraphQL
+- PostgreSQL, MongoDB, Redis
+- Authentication, caching
+
+### DevOps & Cloud
+- AWS, GCP, Azure
+- Docker, Kubernetes
+- CI/CD pipelines`
+  },
+  {
     id: 'frontend-design',
     name: 'Frontend Design',
     description: 'Create distinctive, production-grade frontend interfaces with high design quality.',
@@ -19,38 +93,38 @@ const INITIAL_SKILLS = [
     tags: ['frontend', 'ui', 'css', 'react'],
     content: `---
 name: frontend-design
-description: Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or applications.
+description: Create distinctive, production-grade frontend interfaces with high design quality.
 ---
 
 ## Design Thinking
 
 Before coding, understand the context and commit to a BOLD aesthetic direction:
 - **Purpose**: What problem does this interface solve? Who uses it?
-- **Tone**: Pick an extreme: brutally minimal, maximalist chaos, retro-futuristic, organic/natural, luxury/refined, playful/toy-like, editorial/magazine, brutalist/raw, art deco/geometric, soft/pastel, industrial/utilitarian, etc.
+- **Tone**: Pick an extreme: brutal minimalism, maximalist chaos, retro-futuristic, organic, luxury, playful art deco, soft, brutalist, pastel, industrial, etc.
 - **Constraints**: Technical requirements (framework, performance, accessibility).
 - **Differentiation**: What makes this UNFORGETTABLE?
 
 ## Frontend Aesthetics Guidelines
 
 Focus on:
-- **Typography**: Choose fonts that are beautiful, unique, and interesting. Avoid generic fonts.
-- **Color & Theme**: Commit to a cohesive aesthetic. Use CSS variables for consistency.
-- **Motion**: Use animations for effects and micro-interactions. Focus on high-impact moments.
-- **Spatial Composition**: Unexpected layouts. Asymmetry. Overlap. Diagonal flow. Grid-breaking elements.
-- **Backgrounds & Visual Details**: Create atmosphere and depth rather than defaulting to solid colors.
+- **Typography**: Beautiful, unique fonts - avoid Inter, Roboto, Arial
+- **Color**: Cohesive aesthetic with CSS variables. Dominant colors with sharp accents
+- **Motion**: Animations for effects. Staggered reveals. Scroll-triggering
+- **Spatial**: Unexpected layouts, asymmetry, overlap, diagonal flow
+- **Backgrounds**: Atmosphere and depth - gradients, textures, noise, custom cursors
 
 ## Core Principles
 
-1. **Never use generic AI-generated aesthetics** - Avoid Inter, Roboto, Arial, purple gradients, predictable layouts
-2. **Match implementation complexity to aesthetic vision** - Maximalist needs elaborate code, minimalist needs restraint
-3. **Every design should be different** - Vary between light/dark, fonts, aesthetics
+1. **Never use generic AI aesthetics** - No purple gradients, predictable layouts
+2. **Match complexity to vision** - Maximalist needs elaborate code, minimalist needs restraint
+3. **Every design should be different** - Vary fonts, themes, aesthetics
 
 ## Implementation
 
 Generate production-grade code (HTML/CSS/JS, React, Vue) that is:
 - Visually striking and memorable
-- Cohesive with a clear aesthetic point-of-view
-- Meticulously refined in every detail`
+- Cohesive with clear aesthetic point-of-view
+- Meticulously refined`
   },
   {
     id: 'skill-creator',
@@ -65,19 +139,19 @@ description: Create or update AgentSkills with proper structure and configuratio
 
 ## Overview
 
-This skill guides the creation of well-structured AgentSkills that can be used by AI assistants.
+This skill guides the creation of well-structured AgentSkills.
 
 ## Skill Structure
 
 A proper skill consists of:
-- \`SKILL.md\` - Main definition file
-- \`scripts/\` - Helper scripts
-- \`references/\` - Documentation and guides
-- \`assets/\` - Images, icons, and media
+- SKILL.md - Main definition file
+- scripts/ - Helper scripts
+- references/ - Documentation
+- assets/ - Images, icons
 
 ## Creating a Skill
 
-1. Define the skill name and description
+1. Define name and description
 2. Outline core capabilities
 3. Add usage examples
 4. Include configuration options
@@ -91,12 +165,12 @@ A proper skill consists of:
     tags: ['api', 'weather', 'forecasts'],
     content: `---
 name: weather
-description: Get current weather and forecasts via wttr.in or Open-Meteo.
+description: Get current weather and forecasts.
 ---
 
 ## Usage
 
-Use when: user asks about weather, temperature, or forecasts for any location.
+Use when: user asks about weather, temperature, or forecasts.
 
 ## Features
 
@@ -112,7 +186,7 @@ Use when: user asks about weather, temperature, or forecasts for any location.
 
 ## Limitations
 
-NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis.`
+NOT for: historical weather data, severe weather alerts.`
   }
 ]
 
