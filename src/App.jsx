@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Sparkles, Plus, Download, Search, X, LayoutDashboard, 
   Palette, FileText, Link, Upload, Wand2, ChevronRight,
-  Code, Database, Settings, MessageSquare, Brain, Cog
+  Code, Database, Settings, MessageSquare, Brain, Cog, Menu
 } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -199,12 +199,17 @@ function SkillCard({ skill, onClick }) {
   )
 }
 
-function Header({ visible, skills, activeSkill, onSelectSkill, onNewSkill, onImport, onDashboard, onHome }) {
+function Header({ visible, skills, activeSkill, onSelectSkill, onNewSkill, onImport, onDashboard, onHome, onMenuClick }) {
   return (
     <header className={`header ${visible ? 'visible' : ''}`}>
-      <div className="header-logo" onClick={onHome} style={{ cursor: 'pointer' }}>
-        <Sparkles size={24} />
-        <span>Skill</span>Forge
+      <div className="header-left">
+        <button className="mobile-menu-btn" onClick={onMenuClick}>
+          <Menu size={20} />
+        </button>
+        <div className="header-logo" onClick={onHome} style={{ cursor: 'pointer' }}>
+          <Sparkles size={24} />
+          <span>Skill</span>Forge
+        </div>
       </div>
       
       <div className="header-tabs">
@@ -683,6 +688,7 @@ function App() {
   const [hasInteracted, setHasInteracted] = useState(() => {
     return localStorage.getItem('skillforge-interacted') === 'true'
   })
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     localStorage.setItem('skillforge-skills', JSON.stringify(skills))
@@ -738,6 +744,7 @@ function App() {
         onImport={() => setShowImportModal(true)}
         onDashboard={() => setView('dashboard')}
         onHome={handleHome}
+        onMenuClick={() => setMobileMenuOpen(!mobileMenuOpen)}
       />
       
       <AnimatePresence mode="wait">
