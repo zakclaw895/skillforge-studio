@@ -159,8 +159,9 @@ function Pill({ children, accent, onClick, className = '' }) {
     <motion.button
       className={`pill ${accent ? 'accent' : ''} ${className}`}
       onClick={onClick}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      style={{ width: '100%', textAlign: 'center', justifyContent: 'center' }}
     >
       {children}
     </motion.button>
@@ -271,7 +272,7 @@ function WelcomeScreen({ onNavigate }) {
             />
           </div>
           
-          <div className="pills-container">
+          <div className="pills-container" style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '100%' }}>
             {pills.map((pill, i) => (
               <motion.div
                 key={pill.action}
